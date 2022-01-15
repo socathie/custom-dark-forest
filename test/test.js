@@ -67,7 +67,7 @@ describe("Dark Forest Contract", function () {
             //console.log(errorString);
             expect(errorString).to.have.string('Other players have spawned at this position within the last 5 minutes.');
         });
-        
+        /*
           it("Reject a position currently occupied by another player.", async function () {
             this.timeout(1000000);
             let calldata = await spawnCalldata(40, 40);
@@ -84,6 +84,6 @@ describe("Dark Forest Contract", function () {
             //console.log(errorString);
             expect(errorString).to.have.string('This position is currently occupied by another player.');
           });
-        
+        */
     });
 });

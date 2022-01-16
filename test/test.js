@@ -60,6 +60,9 @@ describe("Dark Forest Contract", function () {
             let errorString;
 
             await darkForest.spawn(calldata[0], calldata[1], calldata[2], calldata[3]);
+
+            calldata = await spawnCalldata(40, 40);
+
             await darkForest.spawn(calldata[0], calldata[1], calldata[2], calldata[3])
                 .catch((error) => {
                     errorString = error.toString();
@@ -67,15 +70,18 @@ describe("Dark Forest Contract", function () {
             //console.log(errorString);
             expect(errorString).to.have.string('Other players have spawned at this position within the last 5 minutes.');
         });
-        /*
+        
           it("Reject a position currently occupied by another player.", async function () {
             this.timeout(1000000);
             let calldata = await spawnCalldata(40, 40);
             let errorString;
 
             await darkForest.spawn(calldata[0], calldata[1], calldata[2], calldata[3]);
-              
-            await sleep(300000).then(() => console.log('ran after 5 minutes passed'));
+            
+            console.log('The next test will take around 5 minutes...')
+            await sleep(360000).then(() => console.log('ran after 5 minutes passed'));
+
+            calldata = await spawnCalldata(40, 40);
 
             await darkForest.spawn(calldata[0], calldata[1], calldata[2], calldata[3])
                 .catch((error) => {
@@ -84,6 +90,6 @@ describe("Dark Forest Contract", function () {
             //console.log(errorString);
             expect(errorString).to.have.string('This position is currently occupied by another player.');
           });
-        */
+        
     });
 });

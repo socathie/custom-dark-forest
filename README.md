@@ -1,6 +1,6 @@
-# Basic Sample Hardhat Project
+# custom-dark-forest
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project demonstrates a Hardhat use case to implement Question 3 from [Assignment 1](https://zku.one/assignments-final-project/assignment-1-into-the-woods) of [zku.ONE](https://zku.one). It comes with a main contract and a verifier contract, a test for that contract, a script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
 Try running some of the following tasks:
 
@@ -10,6 +10,6 @@ npx hardhat compile
 npx hardhat clean
 npx hardhat test
 npx hardhat node
-node scripts/sample-script.js
+npx hardhat run scripts/deploy.js
 npx hardhat help
 ```

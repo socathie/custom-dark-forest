@@ -1,21 +1,21 @@
 require("@nomiclabs/hardhat-waffle");
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
-  const accounts = await hre.ethers.getSigners();
+// Replace this private key with your Harmony account private key
+// To export your private key from Metamask, open Metamask and
+// go to Account Details > Export Private Key
+// Be aware of NEVER putting real Ether into testing accounts
+const HARMONY_PRIVATE_KEY = "insert your private key here";
 
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
-
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
-
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
 module.exports = {
   solidity: "0.8.4",
+  networks: {
+    testnet: {
+      url: `https://api.s0.b.hmny.io`,
+      accounts: [`${HARMONY_PRIVATE_KEY}`]
+    },
+    mainnet: {
+      url: `https://api.harmony.one`,
+      accounts: [`${HARMONY_PRIVATE_KEY}`]
+    }
+  }
 };

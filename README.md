@@ -2,7 +2,7 @@
 
 This project demonstrates a Hardhat use case to implement Question 3 from [Assignment 1](https://zku.one/assignments-final-project/assignment-1-into-the-woods) of [zku.ONE](https://zku.one). It comes with a main contract and a verifier contract, a test for that contract, a script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-Run `npm i` to install.
+Run `npm i` to install. To deploy to the Harmony Testnet, change the private key in `hardhat.config.js` to your own private key. The contracts have also been deployed to the addresses to `deployed.txt` and can be accessed directly.
 
 Try running some of the following tasks:
 
@@ -12,6 +12,6 @@ npx hardhat compile
 npx hardhat clean
 npx hardhat test
 npx hardhat node
-npx hardhat run scripts/deploy.js --network localhost
+npx hardhat run scripts/deploy.js --network testnet
 npx hardhat help
 ```
